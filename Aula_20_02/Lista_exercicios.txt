@@ -1,0 +1,58 @@
+Lista de Exercícios: POO com JavaScript
+
+Exercício 1: Classe Pessoa
+Crie uma classe Pessoa em Pessoa.js com os atributos nome e idade e
+um método apresentar(). No app.js, importe a classe, crie dois
+objetos e chame o método para cada um.
+
+Exercício 2: Classe Carro
+ Crie uma classe Carro em Carro.js com atributos modelo, ano e
+velocidade. Implemente os métodos acelerar() (aumenta 10 km/h)
+e frear() (diminui 5 km/h). No app.js, simule uma corrida de 3
+acelerações e 1 freada.
+
+Exercício 3: Herança Simples
+Crie uma classe base Animal em Animal.js com um método falar().
+Depois crie as subclasses Cachorro e Gato em arquivos separados
+(Cachorro.js, Gato.js) que sobrescrevem o método falar(). No app.js,
+importe e teste.
+
+Exercício 4: Encapsulamento
+Crie uma classe ContaBancaria em ContaBancaria.js com atributo
+privado saldo. Implemente os métodos depositar(valor),
+sacar(valor) e verSaldo(). No app.js, simule depósitos e saques.
+
+Exercício 5: Módulos (Export/Import)
+No arquivo Veiculos.js, crie as classes Carro e Moto. Exporte ambas. No
+app.js, importe as duas e crie objetos testando métodos.
+
+Exercício 6: Composição de Objetos
+Crie uma classe Endereco em Endereco.js e uma classe Cliente
+em Cliente.js que recebe um Endereco no construtor. No app.js,
+monte um cliente com endereço e exiba os dados.
+
+Exercício 7: Polimorfismo
+Crie uma classe Funcionario em Funcionario.js com atributos nome e
+salario, e um método calcularBonus().Depois crie classes
+Gerente e Desenvolvedor que sobrescrevem esse método para
+cálculos diferentes. No app.js, crie objetos de cada tipo e mostre os
+bônus.
+
+Exercício 8: Métodos Estáticos
+Crie uma classe Matematica em Matematica.js apenas com métodos
+estáticos somar(a,b), subtrair(a,b) e fatorial(n). No app.js,
+importe e use sem precisar instanciar.
+
+
+Exercício 9: Crie classes Produto (com nome e preço) e Carrinho (com lista de
+produtos e método total()). Salve cada uma em arquivos separados.
+No app.js, crie produtos, adicione no carrinho e mostre o valor total.
+
+Exercício 10: Classe Produto e Carrinho
+Crie um Projeto, que contenha:
+– Livro.js → classe com titulo, autor e ano.
+– Biblioteca.js → classe que mantém um array (vetor)
+de livros com métodos adicionarLivro(),
+listarLivros() e buscarPorAutor(autor).
+– app.js → monte uma biblioteca com pelo menos 3
+livros e faça buscas por autor.

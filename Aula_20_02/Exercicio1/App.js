@@ -12,5 +12,5 @@ const pessoa2 = new Pessoa();
 pessoa2.nome = 'Ana Paula';
 pessoa2.idade = 45;
 
-pessoa1.apresentar(); //METODO
-pessoa2.apresentar(); //METODO
+pessoa1.apresentar(); //metodo
+pessoa2.apresentar(); 

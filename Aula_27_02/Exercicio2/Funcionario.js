@@ -1,6 +1,6 @@
+ 
 
-
-export default class MeuArray {
+export default class Funcionario {
 
   // Atributo privado
   #items = [];
@@ -55,4 +55,4 @@ export default class MeuArray {
 
   // Retorna todos os itens
   verItens = () => this.#items;
-}
+} 

@@ -1,3 +1,5 @@
+//Como usar a classe
+
 import MeuArray from "./MeuArray.js";
 
 const minha_variavel = new MeuArray();

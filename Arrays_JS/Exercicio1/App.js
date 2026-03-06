@@ -1,5 +1,4 @@
 
-
 import Array from "./Array.js";
 
 const tarefas = new Array();

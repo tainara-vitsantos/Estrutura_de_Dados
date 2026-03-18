@@ -61,28 +61,28 @@ module.exports = Clientes;
 
 class Clientes {
     constructor() {
-        this.fila = [];
+        this.fila = []; // criou uma “fila mágica” de clientes, tipo uma fila de pessoas esperando.
     }
 
     enqueue(cliente) {
-        this.fila.push(cliente);
+        this.fila.push(cliente); // É como se alguém entrasse no final da fila
         console.log(cliente + " entrou na fila.");
     }
 
     dequeue() {
-        return this.fila.shift();
+        return this.fila.shift(); //É quando o primeiro da fila vai embora pra ser atendido
     }
 
     front() {
-        return this.fila[0];
+        return this.fila[0]; // É espiar quem tá na frente da fila
     }
 
     tamanho() {
-        return this.fila.length;
+        return this.fila.length; // Conta quantas pessoas tem na fila
     }
 
     estaVazio() {
-        return this.fila.length === 0;
+        return this.fila.length === 0; // Verifica se não tem ninguém
     }
 }
 

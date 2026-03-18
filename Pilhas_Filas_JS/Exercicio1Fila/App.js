@@ -34,34 +34,31 @@ const Clientes = require("./Clientes");
 
 const atendimento = new Clientes();
 
-atendimento.enqueue("Paciente 1");
-atendimento.enqueue("Paciente 2");
-atendimento.enqueue("Paciente 3");
+// Entrando na fila
+atendimento.enqueue("Paciente 1 Eduardo");
+atendimento.enqueue("Paciente 2 Julia");
+atendimento.enqueue("Paciente 3 Ana");
+atendimento.enqueue("Paciente 4 Jorge");
 
-let contadorPacientes = 4;
-let ordem = 1;
+// Ver quem é o primeiro
+console.log("Primeiro da fila:", atendimento.front()); // É espiar quem tá na frente da fila
 
-function atenderCliente() {
+// Atendendo na ordem
+console.log("Atendido:", atendimento.dequeue());//É quando o primeiro da fila vai embora pra ser atendido
+console.log("Atendido:", atendimento.dequeue());
 
-    if (atendimento.estaVazio()) {
-        console.log("Nenhum cliente na fila.");
-    } else {
-        let paciente = atendimento.dequeue();
-        console.log(`O ${ordem}º paciente atendido foi: ${paciente}`);
-        ordem++;
-    }
+// Mostrando fila atual
+console.log("Fila atual:", atendimento.fila);
 
-    // chance de entrar novo cliente
-    if (Math.random() < 0.5) {
-        atendimento.enqueue("Paciente " + contadorPacientes);
-        contadorPacientes++;
-    }
+// Continuando atendimento
+console.log("Atendido:", atendimento.dequeue());
+console.log("Atendido:", atendimento.dequeue());
 
-    // tempo de atendimento entre 1 e 4 segundos
-    let tempo = Math.floor(Math.random() * 3000) + 1000;
+// Fila agora deve estar vazia
+console.log("Fila atual:", atendimento.fila);
 
-    setTimeout(atenderCliente, tempo);
-}
+// Novo paciente chega
+atendimento.enqueue("Paciente 5 Jonas");
 
-atenderCliente();
-
+// Mostrando fila final
+console.log("Fila atual:", atendimento.fila);

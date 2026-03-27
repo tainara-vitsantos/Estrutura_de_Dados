@@ -30,35 +30,32 @@ console.log("O ultimo a chegar foi:", atendimento.front());
 console.log("Falta ser atendido :", atendimento.tamanho() );
  */
 
-const Clientes = require("./Clientes");
+const Fila = require('./Fila.js');
 
-const atendimento = new Clientes();
+const filaAtendimento = new Fila();
 
-// Entrando na fila
-atendimento.enqueue("Paciente 1 Eduardo");
-atendimento.enqueue("Paciente 2 Julia");
-atendimento.enqueue("Paciente 3 Ana");
-atendimento.enqueue("Paciente 4 Jorge");
+// Adicionando clientes
+filaAtendimento.enqueue("Paciente 1 Eduardo");
+filaAtendimento.enqueue("Paciente 2 Julia");
+filaAtendimento.enqueue("Paciente 3 Ana");
+filaAtendimento.enqueue("Paciente 4 Jorge");
 
-// Ver quem é o primeiro
-console.log("Primeiro da fila:", atendimento.front()); // É espiar quem tá na frente da fila
+// Ver primeiro da fila
+console.log("Primeiro da fila:", filaAtendimento.front());
 
-// Atendendo na ordem
-console.log("Atendido:", atendimento.dequeue());//É quando o primeiro da fila vai embora pra ser atendido
-console.log("Atendido:", atendimento.dequeue());
+// Enquanto a fila não estiver vazia, atendemos os clientes
+function processarAtendimento() {
+    if (!filaAtendimento.estaVazio()) {
+        let tempo = Math.floor(Math.random() * 5000) + 1000;
 
-// Mostrando fila atual
-console.log("Fila atual:", atendimento.fila);
+        console.log("Atendendo:", filaAtendimento.dequeue());
+        
+        // Remove e exibe o cliente atendido
+        setTimeout(processarAtendimento, tempo);
+    } else {
+        console.log("Todos os pacientes foram atendidos!");
+    }
+}
 
-// Continuando atendimento
-console.log("Atendido:", atendimento.dequeue());
-console.log("Atendido:", atendimento.dequeue());
-
-// Fila agora deve estar vazia
-console.log("Fila atual:", atendimento.fila);
-
-// Novo paciente chega
-atendimento.enqueue("Paciente 5 Jonas");
-
-// Mostrando fila final
-console.log("Fila atual:", atendimento.fila);
+// Iniciar atendimento
+processarAtendimento();

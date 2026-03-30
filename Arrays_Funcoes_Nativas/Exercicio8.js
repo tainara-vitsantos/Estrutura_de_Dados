@@ -4,3 +4,6 @@ remova "Daniel" e insira "Diego" no mesmo índice. */
 
 const escala = ['Carlos', 'Daniel', 'Eduardo', 'Felipe'];
 
+escala.splice(1, 1, 'Diego');
+
+console.log(escala);

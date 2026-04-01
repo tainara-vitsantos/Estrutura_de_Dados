@@ -7,7 +7,8 @@ const equipe = [
     {nome: 'Marcos', treinamentoConcluido: true },
     {nome: 'Fernanda', treinamentoConcluido: true },
     {nome: 'Roberto', treinamentoConcluido: false },
-    
 ];
 
-console.log(equipe.includes('true'))
+const todosConcluidos = equipe.every(funcionario => funcionario.treinamentoConcluido === true);
+
+console.log(todosConcluidos);

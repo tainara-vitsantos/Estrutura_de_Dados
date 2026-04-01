@@ -21,6 +21,7 @@ for (const matricula in alunos) {
     // alunos[matricula] acessa o valor (nome do aluno)
     console.log(`Matrícula: ${matricula} - Nome: ${alunos[matricula]}`);
 }
+
 /*  For: “Vou olhar um por um todos os números da caixinha”
 
 E para cada número você fala:
@@ -32,3 +33,4 @@ Matrícula: 202301 - Nome: Ana Silva
 Matrícula: 202302 - Nome: Bruno Oliveira
 Matrícula: 202303 - Nome: Carla Souza
 Matrícula: 202304 - Nome: Diego Santos */
+

@@ -2,19 +2,19 @@
 da base. Simule essa sequência com uma pilha e peça para exibir a ordem de
 retorno à nave. */
 
-const ModuloEspacial = require('./ModuloEspacial.js');
 
-const base = new ModuloEspacial();
+const ModuloEspacial = require("./ModuloEspacial");
 
-// Módulos pousando
-base.pousar("Módulo A");
-base.pousar("Módulo B");
-base.pousar("Módulo C");
-base.pousar("Módulo D");
+const pilha = new ModuloEspacial();
 
-console.log("\n--- Ordem de retorno à nave ---");
+// Empilhando módulos (pouso)
+pilha.push("Módulo Alpha");
+pilha.push("Módulo Beta");
+pilha.push("Módulo Gama");
 
-//Retorno (LIFO)
-while (!base.estaVazia()) {
-    base.retornar();
+console.log("Ordem de retorno:");
+
+// Desempilhando (retorno)
+while (!pilha.isEmpty()) {
+    console.log(pilha.pop());
 }

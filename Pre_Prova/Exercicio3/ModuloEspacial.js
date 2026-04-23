@@ -1,35 +1,29 @@
+/* Módulos espaciais pousam um sobre o outro. O último a pousar é o primeiro a sair
+da base. Simule essa sequência com uma pilha e peça para exibir a ordem de
+retorno à nave. */
+
 class ModuloEspacial {
     constructor() {
-        this.pilha = [];
+        this.itens = [];
     }
 
-    // Pousar módulo (push)
-    pousar(modulo) {
-        this.pilha.push(modulo);
-        console.log("Módulo pousou:", modulo);
+    push(elemento) {
+        this.itens.push(elemento);
     }
 
-    // Retornar módulo (pop)
-    retornar() {
-        if (this.pilha.length === 0) {
-            console.log("Nenhum módulo na base.");
-            return;
+    pop() {
+        if (this.isEmpty()) {
+            return "Base vazia";
         }
-
-        const modulo = this.pilha.pop();
-        console.log("Módulo retornando:", modulo);
-        return modulo;
+        return this.itens.pop();
     }
 
-    //  Ver topo
-    topo() {
-        return this.pilha[this.pilha.length - 1];
-    }
-
-    // Verificar se está vazia
-    estaVazia() {
-        return this.pilha.length === 0;
+    isEmpty() {
+        return this.itens.length === 0;
     }
 }
 
 module.exports = ModuloEspacial;
+
+
+

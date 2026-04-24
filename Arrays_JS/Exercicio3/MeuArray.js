@@ -1,27 +1,20 @@
-
-
 export default class MeuArray {
 
-  // Atributo privado
-  #items = [];
+  #items = []; 
+  #tamanho = 0; 
 
-  // Controle de tamanho
-  #tamanho = 0;
-
-  // Construtor
   constructor() {
     console.log("MeuArray criado!");
   }
 
-  // Adiciona um elemento ao final do array
+  // Adiciona elemento
   adicionar(elemento) {
-    this.#items[this.#tamanho] = elemento;
-    this.#tamanho++;
+    this.#items[this.#tamanho] = elemento; 
+    this.#tamanho++; 
   }
 
-  // Remove o último elemento do array
+  // Remove último
   remover() {
-
     if (this.#tamanho === 0) {
       return undefined;
     }
@@ -34,46 +27,40 @@ export default class MeuArray {
     return ultimoItem; 
   }
 
-  // Acessa o elemento em um índice específico
+  // Obter elemento por índice
   obterElemento(indice) {
-
     if (indice < 0 || indice >= this.#tamanho) {
       return undefined;
     }
-
     return this.#items[indice];
   }
 
-  // Remove todos os elementos
+  // Limpar tudo
   limpar() {
     this.#items = [];
     this.#tamanho = 0;
   }
 
-  // Retorna o tamanho do array
+  // Tamanho
   tamanhoArray = () => this.#tamanho;
 
-  // Retorna todos os itens
-  verItens = () => this.#items;
+  // Ver itens (cópia segura)
+  verItens = () => [...this.#items];
 
-  // Edita um valor em um índice específico 
+  // Editar item
   editar(indice, novoValor) {
-    if (indice >= 0 && indice < this.tamanho) {
-      this.itens[indice] = novoValor;
+    if (indice >= 0 && indice < this.#tamanho) {
+      this.#items[indice] = novoValor;
     }
   }
 
-  // Retorna o índice de um valor (ou -1 se não encontrar) 
-obterIndice(valorProcurado) {
-    for (let i = 0; i < this.tamanho; i++) {
-        // Log para você ver o que está acontecendo no terminal enquanto ele busca
-        // console.log(`Verificando índice ${i}:`, this.itens[i]); 
-
-        if (this.itens[i] === valorProcurado) {
-            return i;
-        }
+  // Buscar índice
+  obterIndice(valorProcurado) {
+    for (let i = 0; i < this.#tamanho; i++) {
+      if (this.#items[i] === valorProcurado) {
+        return i;
+      }
     }
     return -1;
+  }
 }
-}
-

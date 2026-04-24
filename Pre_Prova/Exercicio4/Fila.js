@@ -1,32 +1,29 @@
+
+
+
+// Classe Fila
 class Fila {
-    constructor() {
-        this.fila = [];
-    }
+  constructor() {
+    this.itens = [];
+  }
 
-    // Entrar na fila (enqueue)
-    entrar(crianca) {
-        this.fila.push(crianca);
-        console.log(`${crianca.nome} entrou na fila (${crianca.tempo}s)`);
-    }
+  // Adiciona um elemento ao final da fila
+  enqueue(elemento) {
+    this.itens.push(elemento);
+  }
 
-    // Atender (dequeue)
-    atender() {
-        if (this.estaVazia()) {
-            console.log("Fila vazia.");
-            return null;
-        }
-        return this.fila.shift();
+// Remove e retorna o primeiro elemento da fila
+  dequeue() {
+    if (this.isEmpty()) {
+      return "Fila vazia";
     }
+    return this.itens.shift();
+  }
 
-    // Ver próxima criança
-    frente() {
-        return this.fila[0];
-    }
-
-    // Verificar se está vazia
-    estaVazia() {
-        return this.fila.length === 0;
-    }
+// Retorna o primeiro elemento da fila sem removê-lo
+  isEmpty() {
+    return this.itens.length === 0;
+  }
 }
 
 module.exports = Fila;

@@ -2,14 +2,13 @@
 
 export default class MeuArray {
 
-  // Atributo privado
-  #items = [];
+  #items = [];  // Array interno para armazenar os elementos
 
-  // Controle de tamanho
-  #tamanho = 0;
+  // controle do número de elementos
+  #tamanho = 0; // Mantém o controle do número de elementos
 
   // Construtor
-  constructor() {
+  constructor() { // Apenas para indicar que a classe foi instanciada
     console.log("MeuArray criado!");
   }
 

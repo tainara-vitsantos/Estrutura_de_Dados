@@ -4,32 +4,16 @@ está sendo atendido e o tempo restante. */
 
 const Fila = require('./Fila.js');
 
-const fila = new Fila();
+// Simulação da montanha-russa
+let fila = new Fila();
 
-//  Crianças entrando
-fila.entrar({ nome: "Ana", tempo: 3 });
-fila.entrar({ nome: "Bruno", tempo: 2 });
-fila.entrar({ nome: "Carlos", tempo: 4 });
+fila.enqueue("Lucas");
+fila.enqueue("Ana");
+fila.enqueue("João");
 
-console.log("\n--- Iniciando atendimento ---");
-
-// Simulação
-function simular(fila) {
-    let tempoTotal = 0;
-
-    while (!fila.estaVazia()) {
-        const crianca = fila.atender();
-
-        console.log(`\nAtendendo: ${crianca.nome}`);
-
-        for (let i = crianca.tempo; i > 0; i--) {
-            console.log(`Tempo restante de ${crianca.nome}: ${i}s`);
-        }
-
-        tempoTotal += crianca.tempo;
-    }
-
-    console.log(`\nTempo total da fila: ${tempoTotal}s`);
+while (!fila.isEmpty()) {
+let tempo = Math.floor(Math.random() * 3000) + 1000;
+console.log(`Brincando: ${fila.dequeue()} por ${tempo}ms`);
 }
 
-simular(fila);
+

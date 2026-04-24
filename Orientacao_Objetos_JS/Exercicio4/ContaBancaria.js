@@ -3,7 +3,7 @@ privado saldo. Implemente os métodos depositar(valor),
 sacar(valor) e verSaldo(). No app.js, simule depósitos e saques. */
 
 
-// Classe Base
+// Criando a Classe  // Molde do cofrinho.
 class ContaBancaria {
     #saldo = 0; //atributo privado
 

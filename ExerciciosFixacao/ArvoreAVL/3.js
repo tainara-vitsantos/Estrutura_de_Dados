@@ -153,15 +153,40 @@ class AVLTree {
         }
     }
 
-    drawTree(node, level = 0) {
-        if (node === null) return;
+    drawTree(node = this.root) {
 
-        this.drawTree(node.right, level + 1);
+    if (!node) return;
 
-        console.log("    ".repeat(level) + node.value);
+    console.log("\n");
 
-        this.drawTree(node.left, level + 1);
-    }
+    console.log(
+        `           ${node.value}`
+    );
+
+    console.log(
+        `         /     \\`
+    );
+
+    console.log(
+        `      ${node.left?.value ?? " "}       ${node.right?.value ?? " "}`
+    );
+
+    console.log(
+        `     /   \\     /   \\`
+    );
+
+    console.log(
+        `${node.left?.left?.value ?? " "}   ${
+            node.left?.right?.value ?? " "
+        }   ${
+            node.right?.left?.value ?? " "
+        }   ${
+            node.right?.right?.value ?? " "
+        }`
+    );
+
+    console.log("\n");
+}
 
     inOrder(node, result = []) {
         if (node) {

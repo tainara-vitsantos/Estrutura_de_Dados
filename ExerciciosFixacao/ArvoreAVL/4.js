@@ -142,15 +142,34 @@ class AVLTree {
         );
     }
 
-    drawTree(node, level = 0) {
-        if (!node) return;
+   drawTree() {
 
-        this.drawTree(node.right, level + 1);
+    const raiz = this.root;
 
-        console.log("    ".repeat(level) + node.value);
+    console.log("\n");
 
-        this.drawTree(node.left, level + 1);
-    }
+    console.log(
+        `           ${raiz.value}`
+    );
+
+    console.log(
+        `         /     \\`
+    );
+
+    console.log(
+        `      ${raiz.left.value}       ${raiz.right.value}`
+    );
+
+    console.log(
+        `     /   \\     /   \\`
+    );
+
+    console.log(
+        `${raiz.left.left?.value ?? " "}   ${raiz.left.right?.value ?? " "}   ${
+            raiz.right.left?.value ?? " "
+        }   ${raiz.right.right?.value ?? " "}`
+    );
+}cls
 }
 
 // ===============================
@@ -167,7 +186,7 @@ console.log("===================================");
 console.log("ÁRVORE INICIAL");
 console.log("===================================");
 
-avl.drawTree(avl.root);
+avl.drawTree();
 
 console.log("\nAltura e Fator de Balanceamento:");
 
@@ -190,7 +209,7 @@ avl.root = avl.insert(avl.root, 70);
 
 console.log("\nÁrvore após inserir 70:");
 
-avl.drawTree(avl.root);
+avl.drawTree();
 
 console.log("\nAltura e Fator de Balanceamento:");
 

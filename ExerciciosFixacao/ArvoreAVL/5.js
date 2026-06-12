@@ -205,15 +205,40 @@ class AVLTree {
         return result;
     }
 
-    drawTree(node, level = 0) {
-        if (!node) return;
+drawTree() {
 
-        this.drawTree(node.right, level + 1);
+    if (!this.root) return;
 
-        console.log("    ".repeat(level) + node.value);
+    console.log("\n");
 
-        this.drawTree(node.left, level + 1);
-    }
+    console.log(
+        `           ${this.root.value}`
+    );
+
+    console.log(
+        `         /     \\`
+    );
+
+    console.log(
+        `      ${this.root.left?.value ?? " "}       ${this.root.right?.value ?? " "}`
+    );
+
+    console.log(
+        `     /   \\     /   \\`
+    );
+
+    console.log(
+        `${this.root.left?.left?.value ?? " "}   ${
+            this.root.left?.right?.value ?? " "
+        }   ${
+            this.root.right?.left?.value ?? " "
+        }   ${
+            this.root.right?.right?.value ?? " "
+        }`
+    );
+
+    console.log("\n");
+}
 }
 
 // ======================================
@@ -257,7 +282,7 @@ console.log("\n=================================");
 console.log("ÁRVORE AVL");
 console.log("=================================\n");
 
-avl.drawTree(avl.root);
+avl.drawTree();
 
 const alturaAVL = avl.getHeight(avl.root);
 

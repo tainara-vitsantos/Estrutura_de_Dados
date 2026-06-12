@@ -136,17 +136,41 @@ class AVLTree {
         }
     }
 
-    drawTree(node, space = 0, gap = 6) {
-        if (!node) return;
+    drawTree(node = this.root) {
 
-        space += gap;
+    if (!node) return;
 
-        this.drawTree(node.right, space);
+    console.log("\n");
 
-        console.log(" ".repeat(space - gap) + node.value);
+    console.log(
+        `           ${node.value}`
+    );
 
-        this.drawTree(node.left, space);
-    }
+    console.log(
+        `         /     \\`
+    );
+
+    console.log(
+        `      ${node.left?.value ?? " "}       ${node.right?.value ?? " "}`
+    );
+
+    console.log(
+        `     /   \\     /   \\`
+    );
+
+    console.log(
+        `   ${node.left?.left?.value ?? " "}   ${
+            node.left?.right?.value ?? " "
+        }   ${
+            node.right?.left?.value ?? " "
+        }   ${
+            node.right?.right?.value ?? " "
+        }`
+    );
+
+    console.log("\n");
+}
+
 }
 
 const avl = new AVLTree();
